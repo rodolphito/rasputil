@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Html;
-using System.IO;
 using System.Text.RegularExpressions;
 
 namespace Rasputil
@@ -17,7 +15,5 @@ namespace Rasputil
 		static string SubMedia(Match match) => $"<img src='{match.Value}'/>";
 		static string SubVideo(Match match) => $"<iframe src='https://www.youtube-nocookie.com/embed/{match.Groups[1].Value}' allowfullscreen frameborder=0></iframe>";
 		static string SubLinks(Match match) => $"<a href='{match.Value}'>{match.Value}</a>";
-
-		public static IHtmlContent Inline(string path) => new HtmlString(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), path)));
 	}
 }
