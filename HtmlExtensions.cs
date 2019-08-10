@@ -6,6 +6,6 @@ namespace Rasputil
 {
 	public static class HtmlExtensions
 	{
-		public static void Inline(this IHtmlHelper html, string path) => html.Raw(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), path)));
+		public static IHtmlContent Inline(this IHtmlHelper html, string path) => html.Raw(File.ReadAllText(Path.Combine(Directory.GetCurrentDirectory(), path)));
 	}
 }
